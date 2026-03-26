@@ -13,9 +13,9 @@ app.use(express.json());
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
 
-app.get('/', (req, res) => res.json({ status: 'ok', message: 'Node API with auth is running' }));
+app.get('/', (_req, res) => res.json({ status: '200', message: 'Node API with auth is running' }));
 
-app.use((err, req, res, next) => {
+app.use((err, _req, res, _next) => {
   console.error(err);
   res.status(500).json({ error: 'Internal Server Error' });
 });
